@@ -1,10 +1,10 @@
 package com.uala.hornerito.service;
 
-import com.uala.hornerito.dto.UserDTO;
+import com.fasterxml.jackson.databind.JsonNode;
 
 public interface UserService {
 
-    UserDTO getUserById(int id);
+    JsonNode getUserById(int id);
     void saveUser(String username);
 
 }

@@ -1,6 +1,7 @@
 package com.uala.hornerito.service.impl;
 
-import com.uala.hornerito.dto.UserDTO;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.uala.hornerito.model.db.Users;
 import com.uala.hornerito.repository.UserRepository;
 import com.uala.hornerito.service.UserService;
@@ -12,13 +13,11 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepository repository;
+    ObjectMapper mapper = new ObjectMapper();
 
-    public UserDTO getUserById(int id) {
+    public JsonNode getUserById(int id) {
         Users users = repository.findUserById(id);
-        UserDTO userDTO = new UserDTO();
-        userDTO.setUsername(users.getUsername());
-        userDTO.setId(users.getId());
-        return userDTO;
+        return mapper.valueToTree(users);
     }
 
     public void saveUser(String username) {

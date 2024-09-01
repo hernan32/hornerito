@@ -1,6 +1,6 @@
 package com.uala.hornerito.controller;
 
-import com.uala.hornerito.dto.UserDTO;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.uala.hornerito.dto.request.UserRequestDTO;
 import com.uala.hornerito.service.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -19,7 +19,7 @@ public class UserController {
     UserService userService;
 
     @GetMapping()
-    public UserDTO getUser(HttpServletRequest request, @RequestParam("id") int id) {
+    public JsonNode getUser(HttpServletRequest request, @RequestParam("id") int id) {
         return userService.getUserById(id);
     }
 
