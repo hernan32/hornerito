@@ -6,12 +6,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Timestamp;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Getter
 @Setter
-public class UserRequestDTO {
+public class TweetDTO {
 
-    @JsonProperty("username")
-    public String username;
+    @JsonProperty("id")
+    public int id;
+
+    @JsonProperty("user_id")
+    public String userId;
+
+    @JsonProperty("content")
+    public String content;
+
+    @JsonProperty("datetime")
+    public Timestamp datetime;
+
 }

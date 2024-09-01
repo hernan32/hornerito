@@ -1,7 +1,7 @@
 package com.uala.hornerito.controller;
 
 import com.uala.hornerito.dto.UserDTO;
-import com.uala.hornerito.dto.UserRequestDTO;
+import com.uala.hornerito.dto.request.UserRequestDTO;
 import com.uala.hornerito.service.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
