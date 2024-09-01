@@ -27,7 +27,7 @@ public class TweetServiceImpl implements TweetService {
             Tweet tweet = new Tweet();
             tweet.setUserId(tweetRequestDTO.getUserId());
             tweet.setContent(tweetRequestDTO.getContent());
-            tweetRepository.save(tweet);
+            tweet = tweetRepository.save(tweet);
             return new ResponseEntity<>(tweet, HttpStatus.OK);
         } catch (Exception e) {
             log.error("Error: {}", e.getMessage());
