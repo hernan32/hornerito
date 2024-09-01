@@ -5,6 +5,7 @@ import com.uala.hornerito.model.db.Tweet;
 import com.uala.hornerito.service.TweetService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,9 +27,8 @@ public class TweetController {
 
     @Operation(summary = "Save Tweet.")
     @PostMapping()
-    public ResponseEntity<Tweet> saveTweet(@RequestBody TweetRequestDTO tweetRequestDTO) {
+    public ResponseEntity<Tweet> saveTweet(@Valid @RequestBody TweetRequestDTO tweetRequestDTO) {
         return tweetService.saveTweet(tweetRequestDTO);
     }
-
 
 }
