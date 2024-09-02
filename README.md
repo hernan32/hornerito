@@ -2,6 +2,14 @@
 
 <h1 align="center">Hornerito</h1>
 
+<div align="center">
+  
+![Java Version](https://img.shields.io/badge/Java-21-blue) ![Swagger UI](https://img.shields.io/badge/Swagger_UI-Online-brightgreen) ![Spring Boot Version](https://img.shields.io/badge/Spring_Boot-3.3.3-brightgreen) ![Lombok Version](https://img.shields.io/badge/Lombok-latest-yellow)
+
+
+
+</div>
+
 ## Instrucciones
 
 ### Configuración de Entorno
