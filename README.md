@@ -1,4 +1,7 @@
-# Hornerito
+<p style="text-align: center;"><img src="logo.png" width="20%" alt="logo"/>
+
+---
+<h1 style="text-align: center;">Hornerito</h1>
 
 ## Run
 
