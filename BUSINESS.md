@@ -11,4 +11,4 @@
 
 ### Assumptions
 
-Se entiende por línea de tiempo a las últimas 4 horas. Configurable por constante.
+Se entiende por línea de tiempo a las últimas 3 horas. Configurable por constante.
