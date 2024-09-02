@@ -1,11 +1,5 @@
 ```mermaid
-graph TD
-    style Controllers fill: #ffcccb, stroke: #333, stroke-width: 2px, color: #000
-    style DTOs fill: #cce5ff, stroke: #333, stroke-width: 2px, color: #000
-    style Models fill: #d4edda, stroke: #333, stroke-width: 2px, color: #000
-    style Repository fill: #f8d7da, stroke: #333, stroke-width: 2px, color: #000
-    style Service fill: #fff3cd, stroke: #333, stroke-width: 2px, color: #000
-    style Persistence fill: #e2e3e5, stroke: #333, stroke-width: 2px, color: #000
+graph TD  
     Controllers -->|uses| DTOs
     DTOs -->|passes data to| Service
     Service -->|accesses| Repository
@@ -39,3 +33,29 @@ realizar operaciones CRUD sobre los datos almacenados.
 negocio que deben aplicarse a los datos.
 > Los servicios interactúan con los **controladores** y los **repositorios**. Reciben comandos o consultas de los
 > controladores, procesan la lógica de negocio, y utilizan los repositorios para almacenar o recuperar datos.
+
+### **Persistencia**
+
+```mermaid
+erDiagram
+    USERS {
+        INTEGER id PK "Primary Key"
+        STRING username "User Name"
+    }
+    FOLLOW {
+        INTEGER id PK "Primary Key"
+        INTEGER user_id "User ID"
+        INTEGER following_id "Following User ID"
+    }
+    TWEET {
+        INTEGER id PK "Primary Key"
+        INTEGER user_id "User ID"
+        STRING content "Tweet Content"
+        TIMESTAMP create_date "Creation Date"
+    }
+    
+    USERS ||--o{ FOLLOW : "follows"
+    USERS ||--o{ TWEET : "tweets"
+    FOLLOW }o--|| USERS : "follows"
+    TWEET }o--|| USERS : "created by"
+```
