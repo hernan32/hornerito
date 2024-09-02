@@ -1,4 +1,4 @@
-<p style="text-align: center;"><img src="logo.png" width="20%" alt="logo"/>
+<p align="center"><img src="logo.png" width="20%" alt="logo"/></p>
 
 ---
 <h1 style="text-align: center;">Hornerito</h1>
