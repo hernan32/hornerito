@@ -3,6 +3,7 @@ package com.uala.hornerito.controller;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.uala.hornerito.dto.request.UserRequestDTO;
 import com.uala.hornerito.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,13 @@ public class UserController {
     UserService userService;
 
     @GetMapping()
+    @Operation(summary = "Get User by id.")
     public JsonNode getUser(HttpServletRequest request, @RequestParam("id") int id) {
         return userService.getUserById(id);
     }
 
     @PostMapping()
+    @Operation(summary = "Save User.")
     public void saveUser(@RequestBody UserRequestDTO user) {
         userService.saveUser(user.getUsername());
     }
